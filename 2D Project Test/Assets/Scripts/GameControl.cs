@@ -24,29 +24,34 @@ public class GameControl : MonoBehaviour
 
     public void ButtonClicked(int value)
     {
-        //Debug.Log("Yes Clicked : incoming value : " +value);
+        Control(value,button_itself);
 
-        if (first_choice_value==0)
+       
+    }
+    
+     void Control(int incoming_value,GameObject incoming_object)
+    {
+        if (first_choice_value == 0)
         {
-            first_choice_value= value;
+            first_choice_value = incoming_value;
+            selected_button = incoming_object;
         }
         else
         {
-            if (first_choice_value==value)
+            if (first_choice_value == incoming_value)
             {
-                Debug.Log("Yes matched");
+                Destroy(selected_button.gameObject);
+                Destroy(incoming_object.gameObject);
                 first_choice_value = 0;
+                selected_button = null;
             }
             else
             {
-                Debug.Log("didn't match");
+                selected_button.GetComponent<Image>().sprite = default_sprite;
+                incoming_object.GetComponent<Image>().sprite = default_sprite;
                 first_choice_value = 0;
+                selected_button = null;
             }
         }
-    }
-    
-    void Update()
-    {
-        
     }
 }
