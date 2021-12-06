@@ -21,7 +21,7 @@ public class GameControl : MonoBehaviour
     public GameObject[] gameoverpanels;
 
     //Timer
-    float totalTime =3;
+   public float totalTime =3;
     float minute;
     float second;
     bool timer;
@@ -56,6 +56,18 @@ public class GameControl : MonoBehaviour
 
     }
 
+    public void Pause()
+    {
+        gameoverpanels[2].SetActive(true);
+
+        Time.timeScale = 0;
+    }
+    public void Continue()
+    {
+        gameoverpanels[2].SetActive(false);
+
+        Time.timeScale = 1;
+    }
     void GameOver()
     {
         gameoverpanels[0].SetActive(true);

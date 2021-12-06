@@ -198,10 +198,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 293615480}
-  - component: {fileID: 293615481}
   - component: {fileID: 293615479}
+  - component: {fileID: 293615481}
   m_Layer: 0
-  m_Name: GameControl
+  m_Name: MainMenuSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 293615478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17dbc6989cc10814dab30af8fc9a509b, type: 3}
+  m_Script: {fileID: 11500000, guid: cf88b54b4f4587641b2f7dc0a064bb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -411,6 +411,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &605808185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605808187}
+  - component: {fileID: 605808186}
+  m_Layer: 0
+  m_Name: Gamecontrol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &605808186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605808185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17dbc6989cc10814dab30af8fc9a509b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &605808187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605808185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 855.38, y: 931.48444, z: -538.67126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1086565415
 GameObject:
@@ -515,7 +558,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 293615481}
+      - m_Target: {fileID: 605808186}
         m_TargetAssemblyTypeName: MainMenuCotroller, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
