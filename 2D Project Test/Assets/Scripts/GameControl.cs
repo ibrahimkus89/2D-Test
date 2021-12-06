@@ -81,7 +81,7 @@ public class GameControl : MonoBehaviour
         button_itself = myobject;
         button_itself.GetComponent<Image>().sprite = button_itself.GetComponentInChildren<SpriteRenderer>().sprite;
         button_itself.GetComponent<Image>().raycastTarget = false;
-        sounds[1].Play();
+        sounds[0].Play();
     }
 
      void Button_situation(bool situation)
@@ -141,7 +141,7 @@ public class GameControl : MonoBehaviour
         }
         else
         {
-            sounds[2].Play();
+            sounds[1].Play();
             selected_button.GetComponent<Image>().sprite = default_sprite;
             button_itself.GetComponent<Image>().sprite = default_sprite;
             first_choice_value = 0;
