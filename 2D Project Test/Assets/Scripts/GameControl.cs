@@ -19,12 +19,14 @@ public class GameControl : MonoBehaviour
     public GameObject[] Buttons;
     public TextMeshProUGUI counter;
     public GameObject[] gameoverpanels;
+    public Slider TimeSlider;
 
     //Timer
-   public float totalTime =3;
+   public float totalTime;
     float minute;
     float second;
     bool timer;
+    float elapsedtime;
 
 
 
@@ -32,27 +34,33 @@ public class GameControl : MonoBehaviour
     {
         first_choice_value = 0;
         timer = true;
-        
+        elapsedtime = 0;
+        TimeSlider.value = elapsedtime;
+        TimeSlider.maxValue = totalTime;
+
     }
 
-    
-     void Update()
-    {
-        if (timer && totalTime>1)
-        {
-            totalTime -= Time.deltaTime;
 
-            minute = Mathf.FloorToInt(totalTime / 60);
-            second = Mathf.FloorToInt(totalTime % 60);
+    void Update()
+    {
+        if (timer && elapsedtime!=totalTime)
+        {
+            elapsedtime += Time.deltaTime;
+            TimeSlider.value = elapsedtime;
+
+            if (TimeSlider.maxValue==TimeSlider.value)
+            {
+                timer = false;
+                GameOver();
+            }
+
+            //minute = Mathf.FloorToInt(totalTime / 60);
+            //second = Mathf.FloorToInt(totalTime % 60);
 
             //counter.text = Mathf.FloorToInt(totalTime).ToString();
-            counter.text = string.Format("{0:00}:{1:00}", minute, second);
+            //counter.text = string.Format("{0:00}:{1:00}", minute, second);
         }
-        else
-        {
-            timer = false;
-            GameOver();
-        }
+        
 
     }
 
