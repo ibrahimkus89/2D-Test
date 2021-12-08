@@ -28,8 +28,7 @@ public class GameControl : MonoBehaviour
     bool timer;
     float elapsedtime;
 
-
-
+   
     void Start()
     {
         first_choice_value = 0;
@@ -38,6 +37,9 @@ public class GameControl : MonoBehaviour
         TimeSlider.value = elapsedtime;
         TimeSlider.maxValue = totalTime;
 
+
+       
+       
     }
 
 
